@@ -1,0 +1,9 @@
+# load the package
+library("V.PhyloMaker2")
+
+# input the sample species list
+example <- read.csv("sample_species_list.csv")
+
+# generate a phylogeny for the sample species list
+tree <- phylo.maker(sp.list = example, tree = GBOTB.extended.TPL, nodes = nodes.info.1.TPL, scenarios="S3")
+write.tree(tree$scenario.3, "sample.tre")
